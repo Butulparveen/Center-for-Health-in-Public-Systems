@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Center for Health in Hospital </title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class=" logo">
+                <img src="logo.jpg" />
+            </div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+
+                <li><a href="about.html">About</a></li>
+                <li ><a href="products.html">Products/Services</a></li>
+
+                <li><a href="news.html">News</a></li>
+                <li class="active"><a href="contacts.html">Contacts</a></li>
+            </ul>
+        </div>
+        <div class="title">
+            <h1>
+                Contact us
+            </h1>
+        </div>
+    </header>
+    <div class="container">
+        <?php
+        $myfile = fopen("contacts.txt", "r") or die("Unable to open file!");
+        echo fread($myfile,filesize("contacts.txt"));
+        fclose($myfile);
+        ?>
+    </div>
+</body>
+</html>
